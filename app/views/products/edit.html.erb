@@ -1,25 +1,7 @@
 <h1>Edit a Product</h1>
 
-<%= form_for :product, url: product_path(@product), method: :patch do |p| %>
-<p>
-	<%= p.label :name %><br>
-	<%= p.text_field :name %>
-</p>
+<%= render 'form' %>
 
-<p>
-	<%= p.label :description %><br>
-	<%= p.text_area :description %>
-</p>
-
-<p>
-	<%= p.label :price_in_cents %><br>
-	<%= p.text_field :price_in_cents %>
-</p>
-
-<p>
-	<%= p.submit %>
-</p>
-<% end %>
 
 <%= link_to "Home", "/" %>
 <%= link_to "See All Products", "/products" %>
