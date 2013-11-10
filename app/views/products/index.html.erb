@@ -11,7 +11,7 @@
 	<tr>
 		<td><%= p[:name] %></td>
 		<td><%= p[:description] %></td>
-		<td><%= p[:price_in_cents] %></td>
+		<td><%= p.formatted_price %></td>
 		<td><%= link_to 'edit', edit_product_path(p) %></td>
   <td><%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'} %></td>
 	</tr>
