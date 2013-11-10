@@ -1,0 +1,18 @@
+<h1>Products show</h1>
+<p>
+	<strong>Name:</strong>
+	<%= @product.name %>
+</p>
+
+<p>
+	<strong>Description:</strong>
+	<%= @product.description %>
+</p>
+
+<p>
+	<strong>Price in cents:</strong>
+	<%= @product.price_in_cents %>
+</p>
+
+<%= link_to "See All Products", "/products" %>
+<%= link_to "Edit this item", edit_product_path(@product) %>

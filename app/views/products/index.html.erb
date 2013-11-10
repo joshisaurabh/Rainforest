@@ -1,0 +1,22 @@
+<h1>Available products in Rainforest are:</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Price in cents</th>
+	</tr>
+
+<% @products.each do |p| %>
+	<tr>
+		<td><%= p[:name] %></td>
+		<td><%= p[:description] %></td>
+		<td><%= p[:price_in_cents] %></td>
+		<td><%= link_to 'edit', edit_product_path(p) %></td>
+  <td><%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+	</tr>
+<% end %>
+
+</table>
+<%= link_to "Home", "/" %><br>
+<%= link_to "Add a New Product", "/products/new" %>
