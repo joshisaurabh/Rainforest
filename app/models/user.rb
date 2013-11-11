@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
  					 # aat_accessible :pasowrd, :password_confirmation
  has_many :reviews
  has_many :products, :through => :reviews
+ validates_presence_of :name
 
 end
