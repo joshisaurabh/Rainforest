@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+	#before_filter :ensure_logged_in, :only =>[:show] #ensure_logged_in would be method defined in ApplicationController
+	# before_filter : load_product, only: [:show, :edit, :update, :destroy] # if this is done then we can take out 
+																			#the line @product = Product.find(params[:id]) from the methods below :show, :edit, :update, :destroy] 
   def index
   	@products = Product.all
   end
@@ -33,7 +36,13 @@ class ProductsController < ApplicationController
   		render 'edit'
   	end
   end
-  	
+  
+  def show
+  	@product = Product.find(params[:id])
+  	if current_user
+  		@review = @product.reviews.build
+  	end
+  end
   
 
   def destroy
