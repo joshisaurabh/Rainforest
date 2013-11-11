@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+	before_filter :ensure_logged_in, :only => [:show]
 	#before_filter :ensure_logged_in, :only =>[:show] #ensure_logged_in would be method defined in ApplicationController
 	# before_filter : load_product, only: [:show, :edit, :update, :destroy] # if this is done then we can take out 
 																			#the line @product = Product.find(params[:id]) from the methods below :show, :edit, :update, :destroy] 
