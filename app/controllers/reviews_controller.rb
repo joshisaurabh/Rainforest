@@ -7,14 +7,9 @@ class ReviewsController < ApplicationController
 
   def create
   	@review = @product.reviews.build(review_params)
- 	@review.user_id = current_user.id
-  
- 	if @review.save
- 		redirect_to products_url, notice: "Review created successfully"
- 	else
- 		render :action => :show
- 	end
+ 	  @review.user_id = current_user.id
   end
+  
   def destroy
   	@review = Review.find(params[:id])
   	@review.destroy

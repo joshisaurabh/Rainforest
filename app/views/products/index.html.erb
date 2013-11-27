@@ -12,9 +12,9 @@
 		<td><%= p[:name] %></td>
 		<td><%= p[:description] %></td>
 		<td><%= p.formatted_price %></td>
-		<td><%= link_to 'review', product_path(p) %></td>
-		<td><%= link_to 'edit', edit_product_path(p) %></td>
-  <td><%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		<td><%= link_to 'Review', product_path(p) %></td>
+		<td><%= link_to 'Edit', edit_product_path(p) %></td>
+  <td><%= link_to 'Delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'} %></td>
 	</tr>
 <% end %>
 

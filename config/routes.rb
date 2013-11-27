@@ -1,9 +1,10 @@
 Rainforest::Application.routes.draw do
  
+  get "welcome/index"
   get "reviews/show"
   get "reviews/new"
   get "reviews/edit"
-  root 'products#index'
+  root 'welcome#index'
   resources :products do
     resources :reviews, :except =>[:index]
   end
