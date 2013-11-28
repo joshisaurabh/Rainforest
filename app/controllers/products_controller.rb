@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
 	# before_filter : load_product, only: [:show, :edit, :update, :destroy] # if this is done then we can take out 
 																			#the line @product = Product.find(params[:id]) from the methods below :show, :edit, :update, :destroy] 
   def index
-  	@products = Product.all
+  	 # @products = Product.order('products.created_at :desc').page(params[:page])
+     #alternate syntax of the above line would be
+     @products = Product.order('products.created_at DESC').page(params[:page])
   end
 
   def show
