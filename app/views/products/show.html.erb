@@ -27,17 +27,9 @@
   <h4>New Review</h4>
 
   <%= form_for([@product, @review], :remote => true) do |f| %>
-    <% if @review.errors.any? %>
-    
-      <div id="error_explanation">
-        <h2><%= pluralize(@review.errors.count, "error") %> did not let this review from being saved:</h2>
-        <ul>
-        <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <div id="review-form-errors">
+      <%= render :partial => "/products/review_form_errors" %>
+    </div>
 
     <div class="field">
       <%= f.label :comment %><br />
@@ -45,7 +37,7 @@
     </div>
     
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Add this Review" %>
     </div>
   <% end %>
 

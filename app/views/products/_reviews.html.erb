@@ -2,9 +2,9 @@
 <p>
       <%= review.comment %>
       <br>
-      <% if review.user != nil %>
-        <em> by <%= review.user.name %></em>
+      <% if review.user != nil && review.comment != nil %>
+        by <em> <%= review.user.name %></em>
         Added on: <%= review.created_at %>
       <% end %>
-    </p>
-  <% end %>
+</p>
+<% end %>
