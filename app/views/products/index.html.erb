@@ -1,7 +1,6 @@
 <h1>Available products in Rainforest are:</h1>
 
-
-
+<!-- cut out our loop and refactor into the partial "app/views/products/_product.html.erb" -->
 <table>
 	<tr>
 		<th>Name</th>
@@ -9,18 +8,13 @@
 		<th>Price ($)</th>
 	</tr>
 
-<% @products.each do |p| %>
-	<tr>
-		<td><%= p[:name] %></td>
-		<td><%= p[:description] %></td>
-		<td><%= p.formatted_price %></td>
-		<td><%= link_to 'Review', product_path(p) %></td>
-		<td><%= link_to 'Edit', edit_product_path(p) %></td>
-  <td><%= link_to 'Delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-	</tr>
-<% end %>
+<div id="products">
+  <%= render @products %>
+</div>
 
 </table>
+
+
 <p>-----------------------------------------------</p>
 <!-- renders a helpful message with numbers of displayed vs. total entries -->
 <em><%= page_entries_info @products %></em>
@@ -29,5 +23,8 @@
 <%= paginate @products %>
 
 <p>-----------------------------------------------</p>
+
+
+
 <%= link_to "Home", "/" %><br>
 <%= link_to "Add a New Product", "/products/new" %>

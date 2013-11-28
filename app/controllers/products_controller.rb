@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
   	 # @products = Product.order('products.created_at :desc').page(params[:page])
      #alternate syntax of the above line would be
      @products = Product.order('products.created_at DESC').page(params[:page])
+  
+    respond_to do |format|
+      format.js # allows the controller to respond to Javascript
+      format.html
+    end
   end
 
   def show
