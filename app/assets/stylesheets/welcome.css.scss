@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body
-{
+body {
 
 background-color:#cccccc;
 }
+
+
 
 h1 {
 	font-family: Cursive;
@@ -22,13 +23,15 @@ p {
 	font-size: 1em;
 }
 
-a{
+a {
     color:#cc0000;
     text-decoration:none;
 }
 
-a:hover
-{ 
-background-color:yellow;
+a:hover { 
+background-color:#66FF33;
 }
 
+ tr:hover {
+          background-color: #ffff99;
+        }

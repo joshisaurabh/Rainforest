@@ -1,9 +1,10 @@
-
-	<span><%=  product[:name]  %></span>
-	<span><%=  product[:description]  %></span>
-	<span><%= product.formatted_price %></span>
-	<span><%= link_to 'Review', product_path(product) %></span>
-	<span><%= link_to 'Edit', edit_product_path(product) %></span>
-	<span><%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: 'Are you sure?'} %></span><br>
-
-
+<table>
+	<tr>
+		<td><%=  product[:name]  %><td/>
+		<td><%=  product[:description]  %></td>
+		<td><%= product.formatted_price %></td>
+		<td><%= link_to 'Review', product_path(product) %></td>
+		<td><%= link_to 'Edit', edit_product_path(product) %></td>
+		<td><%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: 'Are you sure?'} %></td><br>
+	</tr>
+</table>
